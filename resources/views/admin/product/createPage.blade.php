@@ -16,6 +16,15 @@
                                         <h3 class="text-center title-2">Prouduct Create Form</h3>
                                     </div>
                                     <hr>
+                                    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
                                     <form action="{{route('product#create')}}" enctype="multipart/form-data"" method="post" novalidate="novalidate">
                                         @csrf
                                         <div class="form-group">
@@ -68,7 +77,7 @@
                                             @enderror
                                         </div>
                                          <div class="form-group">
-                                            <label for="cc-payment" class="control-label mb-1">Product Image</label>
+                                            <label for="cc-payment" class="control-label mb-1">Product Images(Max 5)</label>
                                             <input id="cc-pament" name="productImages[]" type="file" multiple class="form-control @error('productImage') is-invalid @enderror" aria-required="true" aria-invalid="false" placeholder="Product Image...">
                                             @error('productImages')
                                                 <small class="text-danger">{{$message}}</small>

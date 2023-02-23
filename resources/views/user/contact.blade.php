@@ -10,7 +10,7 @@
   <!-- Contact Start -->
     <div class="container-fluid pt-5">
          @if(session('createSuccess'))
-                                <div class="alert alert-primary text-black alert-dismissible fade show" role="alert">
+                                <div style="width: 450px" class="mx-auto alert alert-primary text-black alert-dismissible fade show" role="alert">
                                   <p>{{session('createSuccess')}}</p>
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>

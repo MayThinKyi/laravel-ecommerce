@@ -21,11 +21,21 @@
                                         <h3 class="text-center title-2">Prouduct Edit Form</h3>
                                     </div>
                                     <hr>
+                                    @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
                                     <form action="{{route('product#update',$product->id)}}" enctype="multipart/form-data"" method="post" novalidate="novalidate">
                                         @csrf
                                         <div class='row'>
+                                            <img style="width: 300px;height:300px" src='{{asset('storage/'.json_decode($product->product_images)[0])}}' />
+
                                             <div class="form-group">
-                                            <img style="width: 400px;height:400px" src='{{asset('storage/'.json_decode($product->product_images)[0])}}' />
                                             <label for="cc-payment" class="control-label mb-1">Product Image</label>
                                             <input id="cc-pament" name="productImages[]" multiple type="file" class="form-control @error('productImage') is-invalid @enderror" aria-required="true" aria-invalid="false" placeholder="Product Image...">
                                             @error('productImages')

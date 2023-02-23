@@ -55,7 +55,7 @@
                             </div>
                              @if(count($products)>0)
 
-                            <div style="width:max-content" class="table-responsive table-responsive-data2">
+                            <div style="width:70vw" class="table-responsive table-responsive-data2">
                                 <table  class="table table-data2">
                                     <thead>
                                         <tr >
@@ -73,9 +73,9 @@
 
                                         @foreach ($products as $p)
                                              <tr class=" tr-shadow">
-                                            <td  style="padding:   10px 20px;">
+                                            <td  style="">
 
-                                                <img style="width: 40px;height:40px" src="{{asset('storage/'.json_decode($p->product_images)[0])}}" alt="">
+                                                <img style="width: 70px;height:70px" src="{{asset('storage/'.json_decode($p->product_images)[0])}}" alt="">
                                             </td>
                                             <td  style="padding: 10px 20px;"><small style="white-space: normal;">{{Str::words($p->product_name,3)}}</small></td>
 

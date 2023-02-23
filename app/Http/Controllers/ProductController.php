@@ -45,7 +45,10 @@ class ProductController extends Controller
         }
         */
         if($request->file('productImages')){
+
             foreach ($request->file('productImages') as $image) {
+                $img=['image'=>$image];
+               $this->validateImage($img);
               $name=uniqid().$image->getClientOriginalName();
               $image->storeAs('public',$name);
               $data[]=$name;
@@ -60,6 +63,12 @@ class ProductController extends Controller
 
 
 
+        }
+        //Validate each image from array
+        public function validateImage($request){
+            Validator::make($request,[
+                'image'=>'required|mimes:jpeg,tiff,webp,png,jpg',
+            ])->validate();
         }
 
     //Product Edit Page

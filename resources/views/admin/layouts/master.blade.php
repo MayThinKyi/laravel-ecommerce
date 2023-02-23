@@ -33,7 +33,7 @@
     <!-- Main CSS-->
     <link href="{{asset('admin/css/theme.css')}}" rel="stylesheet" media="all">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+
 
 <body class="animsition">
     <div class="page-wrapper">
@@ -54,31 +54,31 @@
                         </li>
                         <li>
                             <a href="{{route('size#list')}}">
-                                <i class="fas fa-chart-bar"></i>Size List</a>
+                                <i class="fa-solid fa-cubes"></i>Size List</a>
                         </li>
                         <li>
                             <a href="{{route('color#list')}}">
-                                <i class="fas fa-chart-bar"></i>Color List</a>
+                                <i class="fa-solid fa-palette"></i>Color List</a>
                         </li>
                          <li>
                             <a href="{{route('product#list')}}">
-                                <i class="fas fa-chart-bar"></i>Product List</a>
+                                <i class="fa-brands fa-product-hunt"></i>Product List</a>
                         </li>
                          <li>
                             <a href="{{route('admin#orderList')}}">
-                                <i class="fas fa-chart-bar"></i>Order List</a>
+                                <i class="fa-solid fa-arrow-up-wide-short"></i>Order List</a>
                         </li>
                          <li>
                             <a href="{{route('admin#userList')}}">
-                                <i class="fas fa-chart-bar"></i>User List</a>
+                                <i class="fa-solid fa-users"></i>User List</a>
                         </li>
                         <li>
                             <a href="{{route('admin#list')}}">
-                                <i class="fas fa-chart-bar"></i>Admin List</a>
+                                <i class="fa-solid fa-users"></i>Admin List</a>
                         </li>
                          <li>
                             <a href="{{route('admin#contactList')}}">
-                                <i class="fas fa-chart-bar"></i>Contact List</a>
+                                <i class="fa-solid fa-comment"></i>Contact List</a>
                         </li>
 
                     </ul>

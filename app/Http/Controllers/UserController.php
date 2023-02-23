@@ -39,7 +39,7 @@ class UserController extends Controller
         $sizes=Size::get();
         $products=Product::when(request('searchKey'),function($query){
             $query->where('product_name','like','%'.request('searchKey').'%');
-        })->orderBy('created_at','desc')->paginate(15);
+        })->orderBy('created_at','desc')->paginate(20);
         return view('user.shop',compact('categories','sizes','products','carts'));
     }
     public function userAboutUsPage(){
@@ -59,7 +59,7 @@ class UserController extends Controller
        };
         $categories=Category::orderBy('created_at','desc')->get();
         $product=Product::where('id',$id)->first();
-        $products=Product::orderBy('created_at','desc')->get();
+        $products=Product::orderBy('created_at','desc')->paginate(20);
         return view('user.shopDetails',compact('product','categories','products','carts'));
     }
     //Add To Cart
@@ -228,7 +228,7 @@ class UserController extends Controller
        $sizes=Size::get();
 
         $categories=Category::orderBy('created_at','desc')->get();
-        $products=Product::where('product_category',$categoryId)->orderBy('created_at','desc')->get();
+        $products=Product::where('product_category',$categoryId)->orderBy('created_at','desc')->paginate(20);
         return view('user.shop',compact('products','categories','carts','sizes'));
     }
     //productFilterPrice
@@ -243,22 +243,22 @@ class UserController extends Controller
            $categories=Category::orderBy('created_at','desc')->get();
            switch ($price) {
             case '<10000':
-                $products=Product::where('product_price','<',10000)->orderBy('created_at','desc')->get();
+                $products=Product::where('product_price','<',10000)->orderBy('created_at','desc')->paginate(20);
                 break;
                 case '10000-30000':
-                    $products=Product::whereBetween('product_price', [10000, 30000])->orderBy('created_at','desc')->get();
+                    $products=Product::whereBetween('product_price', [10000, 30000])->orderBy('created_at','desc')->paginate(20);
                     break;
                     case '30000-50000':
-                        $products=Product::whereBetween('product_price', [30000, 50000])->orderBy('created_at','desc')->get();
+                        $products=Product::whereBetween('product_price', [30000, 50000])->orderBy('created_at','desc')->paginate(20);
                         break;
                         case '50000-80000':
-                            $products=Product::whereBetween('product_price', [50000, 80000])->orderBy('created_at','desc')->get();
+                            $products=Product::whereBetween('product_price', [50000, 80000])->orderBy('created_at','desc')->paginate(20);
                             break;
                             case '80000-100000':
-                                $products=Product::whereBetween('product_price', [80000, 100000])->orderBy('created_at','desc')->get();
+                                $products=Product::whereBetween('product_price', [80000, 100000])->orderBy('created_at','desc')->paginate(20);
                                 break;
                                 case '>100000':
-                                    $products=Product::where('product_price','>',100000)->orderBy('created_at','desc')->get();
+                                    $products=Product::where('product_price','>',100000)->orderBy('created_at','desc')->paginate(20);
                                     break;
 
            }

@@ -81,7 +81,7 @@
                                 </table>
                             </div>
                              @else
-                                        <h3 class="text-black">There is no Categories...</h3>
+                                        <h3 class="text-black">There is no Contacts...</h3>
                                        @endif
                             <!-- END DATA TABLE -->
                             {{$contacts->links()}}

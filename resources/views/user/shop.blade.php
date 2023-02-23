@@ -17,8 +17,9 @@
                 <div class="col-lg-3">
                     <div class="shop__sidebar px-2">
                         <div class="shop__sidebar__search">
-                            <form action="#">
-                                <input type="text" placeholder="Search...">
+                            <form action="{{route('user#shop')}}" method="get">
+                                @csrf
+                                <input  name='searchKey' value="{{request('searchKey')}}"  type="text" placeholder="Search...">
                                 <button type="submit"><span class="icon_search"></span></button>
                             </form>
                         </div>
@@ -249,10 +250,13 @@
                                     ">No product.Thank you...</h4>
                         </div>
                         @endif
+                      <div class="mt-4 mx-auto ">
+                        {{ $products->links() }}
+                        </div>
 
 
                     </div>
-                    <div class="row">
+                   {{---<div class="row">
                         <div class="col-lg-12">
                             <div class="product__pagination">
                                 <a class="active" href="#">1</a>
@@ -262,7 +266,7 @@
                                 <a href="#">21</a>
                             </div>
                         </div>
-                    </div>
+                    </div>--}}
                 </div>
             </div>
         </div>
